@@ -4,12 +4,14 @@ export function Navbar({ onOpenMenu }) {
   return (
     <nav className="site-nav">
       <a className="brand" href="#inicio">
-        BA<span>.Studio</span>
+        <strong>RG</strong>
+        <span>Ingenieria Electrica</span>
       </a>
 
       <div className="nav-links">
         <a href="#proyectos">Proyectos</a>
         <a href="#servicios">Ingenieria</a>
+        <a href="#tablero">Proceso</a>
         <a href="#contacto" className="button button-dark">
           Contacto
         </a>

@@ -1,6 +1,6 @@
-# BA Studio Landing
+# Electricity — Landing de ingeniería eléctrica
 
-Landing para estudio de ingenieria electrica con frontend en React y formulario conectado a Cloudflare Worker.
+Web inmersiva para estudio de ingeniería eléctrica: narrativa fotográfica con GSAP, sistema modular en React y formulario conectado a Cloudflare Worker.
 
 ## Stack
 

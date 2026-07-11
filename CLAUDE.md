@@ -1,6 +1,6 @@
-# Electricity — Landing BA Studio
+# Electricity — Landing de ingeniería eléctrica
 
-Landing de estudio de ingeniería eléctrica (React 18 + Vite + Cloudflare Workers, form de contacto vía Resend). En transformación hacia experiencia inmersiva estilo Apple con 3D (React Three Fiber + GSAP ScrollTrigger).
+Landing de RG Ingeniería Eléctrica (React 19 + Vite + Cloudflare Workers, form de contacto vía Resend). La experiencia combina narrativa fotográfica con scroll y un sistema modular industrial inspirado en interfaces editoriales contemporáneas. La marca visible es **RG**, acompañada siempre por el descriptor **Ingeniería Eléctrica**.
 
 ## Comandos
 

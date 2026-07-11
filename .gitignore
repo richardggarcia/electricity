@@ -3,3 +3,5 @@ dist
 .env
 .dev.vars
 .wrangler
+.playwright-mcp/
+/voltio-desktop-hero.png

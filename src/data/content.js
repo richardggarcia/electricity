@@ -2,46 +2,46 @@ export const accentColor = "#D9FF3F";
 
 export const projects = [
   {
-    title: "Torre Residencial",
-    location: "Palermo Nuevo",
-    year: "2023",
+    title: "Obra Residencial",
+    location: "Distribucion y protecciones",
+    year: "TIPO 01",
     image:
-      "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=80"
+      "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&fm=webp&q=82&w=1800"
   },
   {
-    title: "Oficinas Corporativas",
-    location: "Puerto Madero",
-    year: "2024",
+    title: "Infraestructura Corporativa",
+    location: "Coordinacion y ejecucion",
+    year: "TIPO 02",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+      "https://images.pexels.com/photos/21812146/pexels-photo-21812146.jpeg?auto=compress&cs=tinysrgb&w=1800"
   },
   {
-    title: "Casa de Autor",
-    location: "Nordelta",
-    year: "2023",
+    title: "Automatizacion Arquitectonica",
+    location: "Iluminacion y control",
+    year: "TIPO 03",
     image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80"
+      "https://images.unsplash.com/photo-1744780940897-ef6337888c6e?auto=format&fit=crop&fm=webp&q=82&w=1800"
   }
 ];
 
 export const services = [
   {
     number: "01",
-    title: "Ingenieria de Obra Nueva",
+    title: "Proyecto Electrico",
     description:
-      "Calculo de cargas, tableros seccionales y documentacion tecnica segun normativa AEA 90364."
+      "Dimensionamiento de circuitos y tableros, criterios de distribucion y documentacion para ejecucion."
   },
   {
     number: "02",
-    title: "Sistemas Inteligentes",
+    title: "Relevamiento y Diagnostico",
     description:
-      "Integracion de KNX, Lutron y automatizaciones para viviendas y espacios corporativos."
+      "Revision de instalaciones existentes, mediciones y definicion de necesidades antes de intervenir."
   },
   {
     number: "03",
-    title: "Certificacion y Gestion",
+    title: "Ejecucion y Coordinacion",
     description:
-      "Tramites DCI, firmas profesionales y acompanamiento tecnico ante distribuidoras y obras."
+      "Montaje, seguimiento y coordinacion tecnica para que lo proyectado pueda resolverse correctamente en obra."
   }
 ];
 
@@ -51,7 +51,11 @@ export const highlights = [
     description: "Planos CAD, diagramas unifilares y carpetas tecnicas listas para obra."
   },
   {
-    title: "Seguridad Normativa",
-    description: "Cumplimiento estricto AEA 90364 con criterio tecnico y respaldo profesional."
+    title: "Criterio de Seguridad",
+    description: "Decisiones tecnicas orientadas a una instalacion ordenada, protegida y mantenible."
+  },
+  {
+    title: "Coordinacion de Obra",
+    description: "Decisiones tecnicas alineadas con arquitectura, proveedores y ejecucion."
   }
 ];

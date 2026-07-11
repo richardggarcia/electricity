@@ -101,7 +101,7 @@ export function ContactForm() {
             type="text"
             value={form.projectType}
             onChange={handleChange}
-            placeholder="Residencial, corporativo, domotica..."
+            placeholder="Residencial, comercial, reforma..."
           />
         </label>
       </div>

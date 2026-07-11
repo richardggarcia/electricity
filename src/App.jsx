@@ -1,19 +1,25 @@
 import {
   ArrowRight,
   ArrowUpRight,
-  FileText,
-  Shield,
+  DraftingCompass,
+  HardHat,
+  ScanSearch,
   Zap
 } from "lucide-react";
 import { useState } from "react";
 import { ContactForm } from "./components/ContactForm";
+import { ElectricalStory } from "./components/ElectricalStory";
 import { MobileMenu } from "./components/MobileMenu";
 import { Navbar } from "./components/Navbar";
 import { Reveal } from "./components/Reveal";
 import { accentColor, highlights, projects, services } from "./data/content";
+import { useCinematicSections } from "./hooks/useCinematicSections";
+
+const serviceIcons = [DraftingCompass, ScanSearch, HardHat];
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useCinematicSections();
 
   return (
     <div className="page-shell" id="inicio">
@@ -22,11 +28,38 @@ export default function App() {
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
 
       <header className="hero section-grid">
-        <div className="hero-watermark">ENERGY</div>
+        <div className="hero-energy" aria-hidden="true">
+          <svg viewBox="0 0 900 700" role="presentation">
+            <defs>
+              <linearGradient id="energy-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#ffffff" stopOpacity="0" />
+                <stop offset="0.42" stopColor="#ffffff" />
+                <stop offset="0.72" stopColor="#d9ff3f" />
+                <stop offset="1" stopColor="#d9ff3f" stopOpacity="0" />
+              </linearGradient>
+              <filter id="energy-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="8" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              className="hero-energy__glow"
+              d="M35 560 C210 560 180 170 390 235 C545 285 540 565 815 165"
+            />
+            <path
+              className="hero-energy__core"
+              d="M35 560 C210 560 180 170 390 235 C545 285 540 565 815 165"
+            />
+          </svg>
+        </div>
+        <div className="hero-watermark">RG</div>
         <Reveal className="hero-copy">
           <div className="eyebrow-row">
             <span className="eyebrow-line" />
-            <p className="eyebrow">Buenos Aires - Engineering</p>
+            <p className="eyebrow">RG - Ingenieria Electrica</p>
           </div>
 
           <h1>
@@ -37,9 +70,8 @@ export default function App() {
 
           <div className="hero-bottom">
             <p>
-              Estudio de ingenieria electrica dedicado a proyectos de alta
-              complejidad para arquitectura moderna, obra nueva y espacios
-              inteligentes.
+              Ingenieria electrica aplicada a obra residencial y comercial:
+              relevamiento, proyecto, ejecucion y documentacion tecnica.
             </p>
 
             <a href="#contacto" className="scroll-link">
@@ -58,137 +90,150 @@ export default function App() {
             <div className="marquee-group" key={index}>
               <span>INGENIERIA ELECTRICA</span>
               <Zap size={20} style={{ color: accentColor }} />
-              <span className="muted">DOMOTICA KNX</span>
-              <span>CERTIFICACION AEA</span>
+              <span className="muted">RELEVAMIENTO TECNICO</span>
+              <span>DOCUMENTACION DE OBRA</span>
               <Zap size={20} style={{ color: accentColor }} />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="split-section split-section--light" id="servicios">
-        <div className="split-shell split-shell--services">
-          <Reveal className="split-panel split-panel--intro">
-            <p className="section-kicker">Nuestras areas</p>
-            <h2>Soluciones tecnicas para arquitectura vanguardista.</h2>
-            <p className="split-copy">
-              Diseno electrico, automatizacion y documentacion ejecutiva para
-              obras donde la instalacion tiene que responder al lenguaje de la
-              arquitectura, no pelearse con ella.
-            </p>
-          </Reveal>
+      <ElectricalStory />
 
-          <div className="split-panel split-panel--stack">
-            {services.map((service) => (
-              <Reveal className="service-card service-card--wide" key={service.number}>
-                <div className="service-card__top">
-                  <span className="service-number">{service.number}</span>
+      <main className="rg-modular">
+        <section className="rg-manifesto" data-rg-section>
+          <div className="rg-manifesto__heading" data-rg-intro>
+            <p className="rg-label">Ingenieria aplicada / Buenos Aires</p>
+            <h2>
+              INGENIERIA
+              <span>CON CRITERIO.</span>
+            </h2>
+          </div>
+
+          <div className="rg-manifesto__grid">
+            <article className="rg-module rg-module--statement" data-rg-item>
+              <span className="rg-module__index">01 / ENFOQUE</span>
+              <p>
+                Proyectamos instalaciones que se entienden antes de ejecutarse:
+                seguras, coordinadas y preparadas para durar.
+              </p>
+            </article>
+
+            <article className="rg-module rg-module--monogram" data-rg-item>
+              <span>RG</span>
+              <div className="rg-pulse" aria-hidden="true" />
+            </article>
+
+            <article className="rg-module rg-module--detail" data-rg-item>
+              <span className="rg-module__index">02 / METODO</span>
+              <p>
+                Relevamiento, calculo, documentacion y seguimiento tecnico
+                conectados en un solo proceso.
+              </p>
+              <a href="#servicios" className="rg-arrow-link">
+                Ver capacidades <ArrowRight size={18} />
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section className="rg-services" id="servicios" data-rg-section>
+          <div className="rg-section-heading" data-rg-intro>
+            <p className="rg-label">Por que RG</p>
+            <h2>TECNICA QUE<br />SOSTIENE LA OBRA.</h2>
+          </div>
+
+          <div className="rg-service-stack">
+            {services.map((service, index) => {
+              const ServiceIcon = serviceIcons[index];
+              const symbolLabel = ["Proyecto", "Diagnostico", "Ejecucion"][index];
+
+              return (
+                <article
+                  className={`rg-service-card rg-service-card--${index + 1}`}
+                  data-rg-item
+                  style={{ "--stack-index": index }}
+                  key={service.number}
+                >
+                  <div className="rg-service-card__copy">
+                    <span className="rg-card-number">{service.number}</span>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+                  <div className="rg-service-card__symbol" aria-hidden="true">
+                    <span>{service.number}</span>
+                    <ServiceIcon strokeWidth={1.15} />
+                    <small>{symbolLabel}</small>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="rg-projects" id="proyectos" data-rg-section>
+          <div className="rg-section-heading rg-section-heading--projects" data-rg-intro>
+            <p className="rg-label">Campos de intervencion</p>
+            <h2>OBRAS<br />EN FOCO.</h2>
+            <p>
+              La experiencia real va a ocupar este espacio. Mientras organizamos
+              el material, mostramos los tipos de intervencion que puede asumir RG.
+            </p>
+          </div>
+
+          <div className="rg-project-grid">
+            {projects.map((project, index) => (
+              <article className={`rg-project rg-project--${index + 1}`} data-rg-item key={project.title}>
+                <img src={project.image} alt={project.title} loading="lazy" />
+                <div className="rg-project__veil" />
+                <div className="rg-project__top">
+                  <span>{project.year}</span>
                   <ArrowUpRight size={22} />
                 </div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </Reveal>
+                <div className="rg-project__copy">
+                  <p>{project.location}</p>
+                  <h3>{project.title}</h3>
+                </div>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="split-section split-section--muted" id="proyectos">
-        <div className="split-shell split-shell--projects">
-          <Reveal className="split-panel split-panel--intro">
-            <p className="section-kicker">Proyectos recientes</p>
-            <h2>Diseno electrico para obras con criterio arquitectonico.</h2>
-            <p className="split-copy">
-              Intervenciones residenciales y corporativas donde el detalle
-              tecnico sostiene la experiencia del espacio y la ejecucion de obra.
-            </p>
-            <a href="#contacto" className="text-link">
-              Solicitar presentacion <ArrowRight size={16} />
-            </a>
-          </Reveal>
-
-          <div className="split-panel split-panel--stack">
-            {projects.map((project) => (
-              <Reveal className="project-card project-card--row" key={project.title}>
-                <div className="project-card__image">
-                  <img src={project.image} alt={project.title} />
-                  <div className="project-overlay">
-                    <p>{project.location}</p>
-                    <h3>{project.title}</h3>
-                  </div>
-                </div>
-                <div className="project-card__content">
-                  <div className="project-card__meta">
-                    <h4>{project.title}</h4>
-                    <span>{project.year}</span>
-                  </div>
-                  <p className="project-card__location">{project.location}</p>
-                  <p className="project-card__description">
-                    Desarrollo de instalacion electrica integral, coordinacion
-                    ejecutiva y definicion tecnica alineada con la obra.
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+        <section className="rg-standards" data-rg-section>
+          <div className="rg-standards__title" data-rg-intro>
+            <span className="rg-chevron" aria-hidden="true">&gt;&gt;</span>
+            <h2>RESPALDO TECNICO<br />EN CADA DECISION.</h2>
           </div>
-        </div>
-      </section>
-
-      <section className="split-section split-section--dark">
-        <div className="split-shell split-shell--dark">
-          <Reveal className="split-panel split-panel--intro">
-            <p className="section-kicker section-kicker--dark">Valor tecnico</p>
-            <h2>
-              El estandar que <span style={{ color: accentColor }}>exigen</span>{" "}
-              los arquitectos.
-            </h2>
-            <p className="cta-copy">
-              Documentacion tecnica impecable, coordinacion ejecutiva y
-              seguridad normativa garantizada.
-            </p>
-          </Reveal>
-
-          <div className="split-panel split-panel--stack">
+          <div className="rg-standards__grid">
             {highlights.map((item, index) => (
-              <Reveal className="highlight-card" key={item.title}>
-                <div className="highlight-card__icon">
-                  {index === 0 ? (
-                    <FileText size={24} style={{ color: accentColor }} />
-                  ) : (
-                    <Shield size={24} style={{ color: accentColor }} />
-                  )}
-                  <ArrowUpRight size={18} />
-                </div>
+              <article data-rg-item key={item.title}>
+                <span>0{index + 1}</span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
-              </Reveal>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="split-section split-section--light" id="contacto">
-        <div className="split-shell split-shell--contact">
-          <Reveal className="split-panel split-panel--intro">
-            <p className="section-kicker">Contacto</p>
-            <h2>Contanos tu proyecto y te respondemos por correo.</h2>
+        <section className="rg-contact" id="contacto" data-rg-section>
+          <div className="rg-contact__intro" data-rg-intro>
+            <p className="rg-label">Iniciar un proyecto</p>
+            <h2>HABLEMOS<br />DE TU OBRA.</h2>
             <p>
-              Formulario listo para recibir consultas residenciales,
-              corporativas y tecnicas. El envio queda conectado a una API propia
-              para no depender del navegador.
+              Contanos el alcance, la ubicacion y la etapa actual. La consulta
+              llega directamente por correo para poder responder con contexto.
             </p>
-          </Reveal>
-
-          <Reveal className="contact-card contact-card--wide">
+          </div>
+          <Reveal className="rg-contact__form">
             <ContactForm />
           </Reveal>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <footer className="footer">
         <div>
           <div className="brand brand--footer">
-            BA<span>.Studio</span>
+            <strong>RG</strong><span>Ingenieria Electrica</span>
           </div>
           <p>
             Consultoria e ingenieria electrica
@@ -200,7 +245,7 @@ export default function App() {
         <div className="footer-meta">
           <div>
             <span>Contacto</span>
-            <a href="mailto:info@bastudio.com.ar">info@bastudio.com.ar</a>
+            <a href="#contacto">Enviar una consulta</a>
           </div>
           <div>
             <span>Ubicacion</span>
