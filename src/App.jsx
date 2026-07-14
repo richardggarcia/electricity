@@ -12,6 +12,7 @@ import { ElectricalStory } from "./components/ElectricalStory";
 import { MobileMenu } from "./components/MobileMenu";
 import { Navbar } from "./components/Navbar";
 import { Reveal } from "./components/Reveal";
+import { WorkVideo } from "./components/WorkVideo";
 import { accentColor, highlights, projects, services } from "./data/content";
 import { useCinematicSections } from "./hooks/useCinematicSections";
 
@@ -101,6 +102,8 @@ export default function App() {
       <ElectricalStory />
 
       <main className="rg-modular">
+        <WorkVideo />
+
         <section className="rg-manifesto" data-rg-section>
           <div className="rg-manifesto__heading" data-rg-intro>
             <p className="rg-label">Como trabajamos / CABA</p>
