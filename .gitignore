@@ -5,3 +5,4 @@ dist
 .wrangler
 .playwright-mcp/
 /voltio-desktop-hero.png
+.vercel

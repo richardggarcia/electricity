@@ -570,7 +570,7 @@
 .footer {
   width: calc(100% - 12px);
   margin: 0 6px 6px;
-  padding: clamp(60px, 7vw, 110px) clamp(24px, 5vw, 90px);
+  padding: clamp(48px, 5vw, 80px) clamp(24px, 5vw, 90px);
   border: 0;
   border-radius: var(--rg-radius);
   background: var(--rg-black);
@@ -583,8 +583,8 @@
 }
 
 .brand--footer strong {
-  font-size: clamp(4rem, 9vw, 9rem);
-  line-height: 0.7;
+  font-size: clamp(3.5rem, 6.5vw, 6.5rem);
+  line-height: 0.78;
 }
 
 .brand--footer span {

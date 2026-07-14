@@ -10,7 +10,7 @@ export function MobileMenu({ isOpen, onClose }) {
       <div className="mobile-menu__header">
         <div className="brand">
           <strong>RG</strong>
-          <span>Ingenieria Electrica</span>
+          <span>Electric</span>
         </div>
         <button type="button" onClick={onClose} aria-label="Cerrar menu">
           <X size={30} />
@@ -22,7 +22,7 @@ export function MobileMenu({ isOpen, onClose }) {
           Proyectos
         </a>
         <a href="#servicios" onClick={onClose}>
-          Ingenieria
+          Servicios
         </a>
         <a href="#tablero" onClick={onClose}>
           Proceso

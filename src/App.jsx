@@ -59,26 +59,26 @@ export default function App() {
         <Reveal className="hero-copy">
           <div className="eyebrow-row">
             <span className="eyebrow-line" />
-            <p className="eyebrow">RG - Ingenieria Electrica</p>
+            <p className="eyebrow">RG Electric</p>
           </div>
 
           <h1>
-            PROYECTAMOS
+            TABLEROS E
             <br />
-            <span>LA ENERGIA</span>
+            <span>INSTALACIONES</span>
           </h1>
 
           <div className="hero-bottom">
             <p>
-              Ingenieria electrica aplicada a obra residencial y comercial:
-              relevamiento, proyecto, ejecucion y documentacion tecnica.
+              Instalaciones electricas para viviendas, locales y obras.
+              Hacemos relevamientos, tableros, montaje y puesta en servicio.
             </p>
 
             <a href="#contacto" className="scroll-link">
               <span className="scroll-link__icon">
                 <ArrowRight size={18} />
               </span>
-              <span>Agenda una consulta</span>
+              <span>Contanos que necesitas</span>
             </a>
           </div>
         </Reveal>
@@ -88,10 +88,10 @@ export default function App() {
         <div className="marquee-track">
           {Array.from({ length: 2 }).map((_, index) => (
             <div className="marquee-group" key={index}>
-              <span>INGENIERIA ELECTRICA</span>
+              <span>INSTALACIONES ELECTRICAS</span>
               <Zap size={20} style={{ color: accentColor }} />
-              <span className="muted">RELEVAMIENTO TECNICO</span>
-              <span>DOCUMENTACION DE OBRA</span>
+              <span className="muted">ARMADO DE TABLEROS</span>
+              <span>RELEVAMIENTOS Y MEDICIONES</span>
               <Zap size={20} style={{ color: accentColor }} />
             </div>
           ))}
@@ -103,19 +103,19 @@ export default function App() {
       <main className="rg-modular">
         <section className="rg-manifesto" data-rg-section>
           <div className="rg-manifesto__heading" data-rg-intro>
-            <p className="rg-label">Ingenieria aplicada / Buenos Aires</p>
+            <p className="rg-label">Como trabajamos / CABA</p>
             <h2>
-              INGENIERIA
-              <span>CON CRITERIO.</span>
+              REVISAMOS
+              <span>ANTES DE INSTALAR.</span>
             </h2>
           </div>
 
           <div className="rg-manifesto__grid">
             <article className="rg-module rg-module--statement" data-rg-item>
-              <span className="rg-module__index">01 / ENFOQUE</span>
+              <span className="rg-module__index">01 / RELEVAMIENTO</span>
               <p>
-                Proyectamos instalaciones que se entienden antes de ejecutarse:
-                seguras, coordinadas y preparadas para durar.
+                Revisamos el lugar, el tablero existente y lo que necesita la obra
+                antes de definir materiales y tareas.
               </p>
             </article>
 
@@ -125,13 +125,13 @@ export default function App() {
             </article>
 
             <article className="rg-module rg-module--detail" data-rg-item>
-              <span className="rg-module__index">02 / METODO</span>
+              <span className="rg-module__index">02 / EJECUCION</span>
               <p>
-                Relevamiento, calculo, documentacion y seguimiento tecnico
-                conectados en un solo proceso.
+                Armamos tableros, hacemos el tendido y verificamos cada circuito
+                antes de terminar el trabajo.
               </p>
               <a href="#servicios" className="rg-arrow-link">
-                Ver capacidades <ArrowRight size={18} />
+                Ver servicios <ArrowRight size={18} />
               </a>
             </article>
           </div>
@@ -139,14 +139,14 @@ export default function App() {
 
         <section className="rg-services" id="servicios" data-rg-section>
           <div className="rg-section-heading" data-rg-intro>
-            <p className="rg-label">Por que RG</p>
-            <h2>TECNICA QUE<br />SOSTIENE LA OBRA.</h2>
+            <p className="rg-label">Servicios</p>
+            <h2>TRABAJOS QUE<br />HACEMOS.</h2>
           </div>
 
           <div className="rg-service-stack">
             {services.map((service, index) => {
               const ServiceIcon = serviceIcons[index];
-              const symbolLabel = ["Proyecto", "Diagnostico", "Ejecucion"][index];
+              const symbolLabel = ["Relevamiento", "Tableros", "Montaje"][index];
 
               return (
                 <article
@@ -173,11 +173,11 @@ export default function App() {
 
         <section className="rg-projects" id="proyectos" data-rg-section>
           <div className="rg-section-heading rg-section-heading--projects" data-rg-intro>
-            <p className="rg-label">Campos de intervencion</p>
-            <h2>OBRAS<br />EN FOCO.</h2>
+            <p className="rg-label">Residencial y comercial</p>
+            <h2>TIPOS DE<br />TRABAJO.</h2>
             <p>
-              La experiencia real va a ocupar este espacio. Mientras organizamos
-              el material, mostramos los tipos de intervencion que puede asumir RG.
+              Instalaciones nuevas, reformas, armado de tableros y adecuaciones
+              sobre instalaciones existentes.
             </p>
           </div>
 
@@ -202,7 +202,7 @@ export default function App() {
         <section className="rg-standards" data-rg-section>
           <div className="rg-standards__title" data-rg-intro>
             <span className="rg-chevron" aria-hidden="true">&gt;&gt;</span>
-            <h2>RESPALDO TECNICO<br />EN CADA DECISION.</h2>
+            <h2>ORDEN.<br />PROTECCION.<br />PLANOS.</h2>
           </div>
           <div className="rg-standards__grid">
             {highlights.map((item, index) => (
@@ -217,11 +217,11 @@ export default function App() {
 
         <section className="rg-contact" id="contacto" data-rg-section>
           <div className="rg-contact__intro" data-rg-intro>
-            <p className="rg-label">Iniciar un proyecto</p>
-            <h2>HABLEMOS<br />DE TU OBRA.</h2>
+            <p className="rg-label">Consultas</p>
+            <h2>CONTANOS<br />QUE NECESITAS.</h2>
             <p>
-              Contanos el alcance, la ubicacion y la etapa actual. La consulta
-              llega directamente por correo para poder responder con contexto.
+              Decinos donde es el trabajo, que necesitas resolver y en que etapa
+              esta la obra. Te respondemos por correo.
             </p>
           </div>
           <Reveal className="rg-contact__form">
@@ -233,12 +233,12 @@ export default function App() {
       <footer className="footer">
         <div>
           <div className="brand brand--footer">
-            <strong>RG</strong><span>Ingenieria Electrica</span>
+            <strong>RG</strong><span>Electric</span>
           </div>
           <p>
-            Consultoria e ingenieria electrica
+            Tableros e instalaciones electricas
             <br />
-            Buenos Aires, Argentina
+            Caballito, CABA
           </p>
         </div>
 
@@ -249,7 +249,7 @@ export default function App() {
           </div>
           <div>
             <span>Ubicacion</span>
-            <p>Palermo, CABA</p>
+            <p>Caballito, CABA</p>
           </div>
         </div>
       </footer>

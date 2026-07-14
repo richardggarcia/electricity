@@ -1,6 +1,6 @@
-# Electricity — Landing de ingeniería eléctrica
+# RG Electric — Landing de instalaciones eléctricas
 
-Landing de RG Ingeniería Eléctrica (React 19 + Vite + Cloudflare Workers, form de contacto vía Resend). La experiencia combina narrativa fotográfica con scroll y un sistema modular industrial inspirado en interfaces editoriales contemporáneas. La marca visible es **RG**, acompañada siempre por el descriptor **Ingeniería Eléctrica**.
+Landing de RG Electric (React 19 + Vite + Cloudflare Workers, form de contacto vía Resend). La experiencia combina narrativa fotográfica con scroll y un sistema modular industrial inspirado en interfaces editoriales contemporáneas. La marca visible es **RG Electric** y el servicio se describe como **Instalaciones Eléctricas**.
 
 ## Comandos
 

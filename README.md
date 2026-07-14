@@ -1,6 +1,6 @@
-# Electricity — Landing de ingeniería eléctrica
+# RG Electric — Landing de instalaciones eléctricas
 
-Web inmersiva para estudio de ingeniería eléctrica: narrativa fotográfica con GSAP, sistema modular en React y formulario conectado a Cloudflare Worker.
+Web inmersiva para servicios de instalaciones eléctricas: narrativa fotográfica con GSAP, sistema modular en React y formulario conectado a Cloudflare Worker.
 
 ## Stack
 

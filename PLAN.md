@@ -3,9 +3,9 @@
 
 ## Objetivo
 
-Transformar la landing del estudio de ingeniería eléctrica de una página editorial estática a una experiencia inmersiva de scroll-storytelling con 3D de nivel premium, usando el tema eléctrico como narrativa visual.
+Transformar la landing de instalaciones eléctricas de una página editorial estática a una experiencia inmersiva de scroll-storytelling con 3D de nivel premium, usando el tema eléctrico como narrativa visual.
 
-> Marca actualizada (2026-07-11): **RG / Ingeniería Eléctrica**. RG funciona como monograma y el descriptor acompaña la marca en nav, footer, metadata y comunicaciones.
+> Marca actualizada (2026-07-13): **RG Electric**. RG funciona como monograma y Electric completa la marca; Instalaciones Eléctricas queda como descriptor del servicio.
 
 ## Premisas
 
@@ -30,7 +30,7 @@ Transformar la landing del estudio de ingeniería eléctrica de una página edit
 ### Fase 3 — Tablero eléctrico en vista explotada (pieza central)
 - Modelo procedural del tablero con geometrías Three.js: gabinete, riel DIN, térmicas/breakers, barras de cobre, cableado peinado.
 - Sección pineada con GSAP ScrollTrigger: al hacer scroll el tablero se desarma por capas.
-- Anotaciones técnicas (HTML overlay con drei `<Html>`) ancladas a cada componente, apareciendo por etapa: normativa AEA 90364, selectividad, documentación.
+- Anotaciones técnicas (HTML overlay con drei `<Html>`) ancladas a cada componente, apareciendo por etapa: normativa AEA 90364, protecciones, documentación.
 - Reversa limpia al hacer scroll hacia arriba; fallback: secuencia de imágenes estáticas o layout simple.
 
 ### Fase 4 — Flujo de corriente entre secciones
@@ -66,7 +66,7 @@ Transformar la landing del estudio de ingeniería eléctrica de una página edit
 - Cloudflare Turnstile (rechazado en gate D8 — honeypot + WAF bastan).
 - Sentry/error-tracking dedicado (diferido — `wrangler tail` + analítica cubren la etapa actual).
 
-> Gate final resuelto (2026-07-11): plan APROBADO como está (D5). WebView de WhatsApp recibe 3D completo — decisión original de Richard sostenida frente al challenge del revisor; el spike Fase 0 lo prueba ahí con datos reales (D6). Marca actual: **RG / Ingeniería Eléctrica**. Sonido ambiental sutil ACEPTADO al alcance: hum eléctrico en interacciones clave, con toggle, apagado por defecto (D8).
+> Gate final resuelto (2026-07-11): plan APROBADO como está (D5). WebView de WhatsApp recibe 3D completo — decisión original de Richard sostenida frente al challenge del revisor; el spike Fase 0 lo prueba ahí con datos reales (D6). Marca actualizada posteriormente a **RG Electric**. Sonido ambiental sutil ACEPTADO al alcance: hum eléctrico en interacciones clave, con toggle, apagado por defecto (D8).
 
 ## Ajustes de la revisión CEO (incorporados tras voz independiente)
 
@@ -198,11 +198,11 @@ Lanes A y B corren en paralelo. C puede solaparse con B. D espera el gate.
 ## Dirección de diseño (fixes de la revisión de diseño, /autoplan Fase 2)
 
 1. **Conversión a sistema oscuro (crítico #1):** el token base actual es claro (`--bg: #f1f0e8`) y es físicamente incompatible con un canvas de energía detrás del HTML (secciones opacas claras lo taparían; transparentes matan el contraste). Decisión: **conversión dark completa** con set de tokens oscuro derivado del sistema editorial actual, y reglas de composición por sección: hero y tablero = "ventanas" al canvas; servicios/proyectos/contacto = superficies oscuras opacas con el flujo de corriente pasando por los bordes. Todo texto sobre 3D lleva scrim (gradiente) que garantice contraste ≥ 4.5:1. [Decisión de gusto — se ratifica en gate final.]
-2. **Proyectos en lenguaje esquemático (crítico #2):** mientras no haya fotos reales, la sección proyectos NO usa fotos stock: se renderizan "tipos de obra" como isométricos esquemáticos / diagramas estilo unifilar en el mismo lenguaje visual 3D/línea. Honesto, consistente con el medio y más fuerte que Unsplash ante arquitectos. Las fotos reales las reemplazan cuando existan.
-3. **Spec del hero (pantalla 1):** eyebrow ("Ingeniería eléctrica — Buenos Aires"), H1, una línea de propuesta de valor, CTA primario ("Agenda una consulta"), indicador de scroll. Coreografía: preloader → el filamento "enciende" desde el trazo del preloader (handoff continuo, no corte) → titular entra por líneas con stagger.
+2. **Proyectos en lenguaje esquemático (crítico #2):** mientras no haya fotos reales, la sección proyectos NO usa fotos stock: se renderizan "tipos de obra" como isométricos esquemáticos / diagramas eléctricos en el mismo lenguaje visual 3D/línea. Honesto, consistente con el medio y más fuerte que Unsplash ante arquitectos. Las fotos reales las reemplazan cuando existan.
+3. **Spec del hero (pantalla 1):** eyebrow ("Instalaciones eléctricas — Buenos Aires"), H1, una línea de propuesta de valor, CTA primario ("Agenda una consulta"), indicador de scroll. Coreografía: preloader → el filamento "enciende" desde el trazo del preloader (handoff continuo, no corte) → titular entra por líneas con stagger.
 4. **Art-direction one-pager antes de Fase 2 (build):** paleta (superficies oscuras + cobre + roles del acento), escala tipográfica sobre canvas, storyboard de 6 cuadros del tablero (etapas, cámara, anotación por etapa), vocabulario de easing y duraciones, amplitud de parallax en px.
 5. **Roles del acento `#D9FF3F`:** reservado para elementos interactivos (CTA, links, hover). La energía (filamento, partículas, bloom) usa núcleo más blanco con falloff hacia el acento — si todo brilla lima, el CTA deja de destacar.
-6. **Guion del tablero (pieza central):** pin ≤ 400vh, 4 etapas mapeadas: (1) tablero cerrado + título, (2) puerta/frente se separa → "Normativa AEA 90364", (3) térmicas y barras se despliegan → "Selectividad y protecciones", (4) cableado peinado visible → "Documentación ejecutiva". Al liberar el pin: el tablero se rearma, la cámara retrocede y el flujo de corriente guía el ojo hacia proyectos (beat de descompresión). La sección "Valor técnico" actual se elimina — sus highlights viven en las anotaciones de las etapas (una sección = un trabajo).
+6. **Guion del tablero (pieza central):** pin ≤ 400vh, 4 etapas mapeadas: (1) tablero cerrado + título, (2) puerta/frente se separa → "Normativa AEA 90364", (3) térmicas y barras se despliegan → "Protecciones y distribución", (4) cableado peinado visible → "Documentación de obra". Al liberar el pin: el tablero se rearma, la cámara retrocede y el flujo de corriente guía el ojo hacia proyectos (beat de descompresión). La sección "Valor técnico" actual se elimina — sus highlights viven en las anotaciones de las etapas (una sección = un trabajo).
 7. **Marquee:** se rediseña como línea de corriente tipográfica (mismo lenguaje del CurrentFlow) o se elimina si no encuentra su lugar — no sobrevive como ticker editorial entre dos escenas cinematográficas.
 8. **Estados de diseño faltantes:** preloader = trazo de circuito que se dibuja (progreso real del chunk), con handoff al filamento; fallback del tablero si el spike falla = secuencia de imágenes pre-renderizada (decidido, ya no "o layout simple"); `webglcontextlost` durante el pin = swap a la secuencia de imágenes conservando altura de sección (sin teletransporte de scroll); tiers de calidad definidos (alto: bloom+partículas / medio: bloom barato sin partículas / bajo: emisivo sin postprocesado) con degradación solo entre secciones, nunca a mitad de scroll visible; anotaciones `<Html>` en móvil = panel inferior fijo por etapa (no flotantes sobre el modelo); éxito del form = mensaje + oferta de seguir por WhatsApp; skeleton de imágenes = bloque con shimmer sutil en el color de superficie.
 9. **Marca antes del Release 1:** el nombre definitivo se necesita para OG card, WhatsApp y preloader. Decisión del usuario en el gate final; Release 1 no sale sin marca definida.
@@ -264,6 +264,6 @@ Lanes A y B corren en paralelo. C puede solaparse con B. D espera el gate.
 | DX Review | `/plan-devex-review` | Developer experience gaps | 0 | SKIPPED | sin alcance developer-facing |
 
 - **CROSS-MODEL:** Codex no disponible (binario corrupto); las tres voces externas fueron subagentes Claude independientes. Tema cross-fase de alta confianza: el tablero debe ser un asset real de Blender con exactitud técnica (CEO F6 + Eng F16, hallado independientemente).
-- **VERDICT:** CEO + DESIGN + ENG CLEARED — plan APROBADO por Richard en el gate final de /autoplan (D5, 2026-07-11). Decisiones del gate: full 3D también en WebView (D6, dirección original sostenida), marca actual RG / Ingeniería Eléctrica, sonido ambiental aceptado / Turnstile rechazado (D8). Listo para implementar: Release 1 (quick wins) + Fase 0 (spike con kill-gate) en paralelo.
+- **VERDICT:** CEO + DESIGN + ENG CLEARED — plan APROBADO por Richard en el gate final de /autoplan (D5, 2026-07-11). Decisiones del gate: full 3D también en WebView (D6, dirección original sostenida), marca actualizada posteriormente a RG Electric, sonido ambiental aceptado / Turnstile rechazado (D8). Listo para implementar: Release 1 (quick wins) + Fase 0 (spike con kill-gate) en paralelo.
 
 NO UNRESOLVED DECISIONS

@@ -9,40 +9,40 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const scenes = [
   {
     number: "01",
-    kicker: "Diagnostico",
-    title: "Antes de tocar, entendemos.",
+    kicker: "Relevamiento",
+    title: "Primero revisamos la instalacion.",
     description:
-      "Medicion, relevamiento y criterio tecnico para tomar decisiones con informacion real.",
+      "Medimos, identificamos circuitos y revisamos el tablero antes de definir el trabajo.",
     image:
       "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&fm=webp&q=82&w=2200",
     position: "center"
   },
   {
     number: "02",
-    kicker: "Proteccion",
-    title: "Cada circuito tiene una razon.",
+    kicker: "Protecciones",
+    title: "Cada circuito, con su proteccion.",
     description:
-      "Selectividad, seguridad y distribucion pensadas como un sistema, no como piezas aisladas.",
+      "Separamos cargas, ordenamos la distribucion y colocamos las protecciones necesarias.",
     image:
       "https://images.pexels.com/photos/33531832/pexels-photo-33531832.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
   },
   {
     number: "03",
-    kicker: "Ejecucion",
-    title: "La precision tambien se construye.",
+    kicker: "Montaje",
+    title: "Tableros claros y cableado ordenado.",
     description:
-      "Montaje ordenado, cableado legible y documentacion que acompana cada etapa de la obra.",
+      "Armamos, identificamos y conectamos para que la instalacion sea facil de revisar y mantener.",
     image:
       "https://images.pexels.com/photos/21812146/pexels-photo-21812146.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
   },
   {
     number: "04",
-    kicker: "Arquitectura",
-    title: "La tecnica desaparece. La experiencia queda.",
+    kicker: "Pruebas",
+    title: "Probamos todo antes de entregar.",
     description:
-      "Ingenieria electrica integrada al espacio: silenciosa, precisa y presente donde importa.",
+      "Revisamos conexiones, protecciones y funcionamiento antes de dar el trabajo por terminado.",
     image:
       "https://images.unsplash.com/photo-1744780940897-ef6337888c6e?auto=format&fit=crop&fm=webp&q=82&w=2200",
     position: "center"
@@ -130,7 +130,7 @@ export function ElectricalStory() {
         </div>
 
         <div className="electrical-story__topline">
-          <span>RG / INGENIERIA ELECTRICA</span>
+          <span>RG ELECTRIC / INSTALACIONES ELECTRICAS</span>
           <span>SECUENCIA 01-04</span>
         </div>
 
