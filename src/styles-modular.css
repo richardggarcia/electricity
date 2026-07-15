@@ -54,6 +54,21 @@
   background: rgba(255, 255, 255, 0.035);
 }
 
+.site-nav .nav-social {
+  width: 66px;
+  padding: 0 !important;
+  justify-content: center;
+  border-left-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+.site-nav .nav-social svg {
+  transition: transform 180ms ease;
+}
+
+.site-nav .nav-social:hover svg {
+  transform: rotate(-6deg) scale(1.08);
+}
+
 .site-nav .button-dark {
   align-self: stretch;
   min-width: 164px;

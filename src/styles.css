@@ -712,6 +712,37 @@ textarea {
   line-height: 0.95;
 }
 
+.mobile-menu__socials {
+  width: max-content;
+  margin-top: 16px;
+  padding-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.mobile-menu__links .mobile-menu__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent);
+  font-family: "Manrope", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.mobile-menu__socials small {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .fade-in-up {
   opacity: 0;
   transform: translateY(36px);
