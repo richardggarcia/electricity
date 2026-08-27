@@ -10,9 +10,9 @@ export function Navbar({ onOpenMenu }) {
       </a>
 
       <div className="nav-links">
+        <a href="#rubros">Rubros</a>
         <a href="#obra-real">Trabajos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#tablero">Proceso</a>
+        <a href="#servicios">Proceso</a>
         <a
           className="nav-social"
           href="https://www.instagram.com/rggelectric/"

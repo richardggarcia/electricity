@@ -12,6 +12,7 @@ import { ElectricalStory } from "./components/ElectricalStory";
 import { MobileMenu } from "./components/MobileMenu";
 import { Navbar } from "./components/Navbar";
 import { Reveal } from "./components/Reveal";
+import { ServiceAreas } from "./components/ServiceAreas";
 import { WorkVideo } from "./components/WorkVideo";
 import { accentColor, highlights, projects, services } from "./data/content";
 import { useCinematicSections } from "./hooks/useCinematicSections";
@@ -66,22 +67,23 @@ export default function App() {
           </div>
 
           <h1>
-            TABLEROS E
+            INSTALACIONES
             <br />
-            <span>INSTALACIONES</span>
+            <span>ELÉCTRICAS Y REDES</span>
           </h1>
 
           <div className="hero-bottom">
             <p>
-              Instalaciones eléctricas para viviendas, locales y obras.
-              Hacemos relevamientos, tableros, montaje y puesta en servicio.
+              Instalaciones eléctricas y cableado de redes para viviendas,
+              locales y obras en CABA. Relevamos, ejecutamos y te entregamos
+              los planos.
             </p>
 
             <a href="#contacto" className="scroll-link">
               <span className="scroll-link__icon">
                 <ArrowRight size={18} />
               </span>
-              <span>Contanos que necesitas</span>
+              <span>Contanos qué necesitás</span>
             </a>
           </div>
         </Reveal>
@@ -108,10 +110,10 @@ export default function App() {
 
         <section className="rg-manifesto" data-rg-section>
           <div className="rg-manifesto__heading" data-rg-intro>
-            <p className="rg-label">Como trabajamos / CABA</p>
+            <p className="rg-label">Cómo trabajamos / CABA</p>
             <h2>
-              REVISAMOS
-              <span>ANTES DE INSTALAR.</span>
+              TODO QUEDA
+              <span>DOCUMENTADO.</span>
             </h2>
           </div>
 
@@ -119,8 +121,8 @@ export default function App() {
             <article className="rg-module rg-module--statement" data-rg-item>
               <span className="rg-module__index">01 / RELEVAMIENTO</span>
               <p>
-                Revisamos el lugar, el tablero existente y lo que necesita la obra
-                antes de definir materiales y tareas.
+                Revisamos el lugar y lo que ya está instalado antes de definir
+                materiales, tiempos y tareas.
               </p>
             </article>
 
@@ -130,28 +132,30 @@ export default function App() {
             </article>
 
             <article className="rg-module rg-module--detail" data-rg-item>
-              <span className="rg-module__index">02 / EJECUCION</span>
+              <span className="rg-module__index">02 / EJECUCIÓN</span>
               <p>
-                Armamos tableros, hacemos el tendido y verificamos cada circuito
-                antes de terminar el trabajo.
+                Ejecutamos, probamos y etiquetamos. Al terminar te entregamos
+                los planos de lo que quedó hecho.
               </p>
-              <a href="#servicios" className="rg-arrow-link">
-                Ver servicios <ArrowRight size={18} />
+              <a href="#rubros" className="rg-arrow-link">
+                Ver rubros <ArrowRight size={18} />
               </a>
             </article>
           </div>
         </section>
 
+        <ServiceAreas />
+
         <section className="rg-services" id="servicios" data-rg-section>
           <div className="rg-section-heading" data-rg-intro>
-            <p className="rg-label">Servicios</p>
-            <h2>TRABAJOS QUE<br />HACEMOS.</h2>
+            <p className="rg-label">Proceso</p>
+            <h2>CÓMO LO<br />HACEMOS.</h2>
           </div>
 
           <div className="rg-service-stack">
             {services.map((service, index) => {
               const ServiceIcon = serviceIcons[index];
-              const symbolLabel = ["Relevamiento", "Tableros", "Montaje"][index];
+              const symbolLabel = ["Relevamiento", "Ejecución", "Entrega"][index];
 
               return (
                 <article
@@ -207,7 +211,7 @@ export default function App() {
         <section className="rg-standards" data-rg-section>
           <div className="rg-standards__title" data-rg-intro>
             <span className="rg-chevron" aria-hidden="true">&gt;&gt;</span>
-            <h2>ORDEN.<br />PROTECCION.<br />PLANOS.</h2>
+            <h2>ORDEN.<br />PROTECCIÓN.<br />PLANOS.</h2>
           </div>
           <div className="rg-standards__grid">
             {highlights.map((item, index) => (
@@ -223,10 +227,10 @@ export default function App() {
         <section className="rg-contact" id="contacto" data-rg-section>
           <div className="rg-contact__intro" data-rg-intro>
             <p className="rg-label">Consultas</p>
-            <h2>CONTANOS<br />QUE NECESITAS.</h2>
+            <h2>CONTANOS<br />QUÉ NECESITÁS.</h2>
             <p>
-              Decinos donde es el trabajo, que necesitas resolver y en que etapa
-              esta la obra. Te respondemos por correo.
+              Decinos dónde es el trabajo, qué necesitás resolver y en qué etapa
+              está la obra. Te respondemos por correo.
             </p>
           </div>
           <Reveal className="rg-contact__form">
@@ -253,7 +257,7 @@ export default function App() {
             <a href="#contacto">Enviar una consulta</a>
           </div>
           <div>
-            <span>Ubicacion</span>
+            <span>Ubicación</span>
             <p>Caballito, CABA</p>
           </div>
         </div>

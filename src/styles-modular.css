@@ -1038,3 +1038,117 @@
     animation: none;
   }
 }
+
+/* ---------- Rubros ---------- */
+
+.rg-areas {
+  overflow: clip;
+  margin-top: var(--rg-gap);
+  border-radius: var(--rg-radius);
+  background: var(--rg-paper);
+  color: var(--rg-black);
+}
+
+.rg-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--rg-gap);
+  padding: 0 var(--rg-gap) var(--rg-gap);
+}
+
+.rg-area {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(30px, 3.6vw, 58px);
+  background: var(--rg-paper-soft);
+  border: 1px solid var(--rg-border);
+  /* Mismo corte de esquina que las tarjetas del proceso. */
+  clip-path: polygon(0 0, calc(100% - 74px) 0, 100% 74px, 100% 100%, 0 100%);
+}
+
+.rg-area:last-child {
+  background: var(--rg-black);
+  color: var(--rg-paper);
+  border-color: transparent;
+}
+
+.rg-area__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(48px, 7vw, 96px);
+}
+
+.rg-area__head svg {
+  width: clamp(34px, 3.4vw, 48px);
+  height: auto;
+  opacity: 0.55;
+}
+
+.rg-area:last-child .rg-area__head svg {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.rg-area h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.rg-area__claim {
+  margin-top: 14px;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.5;
+  /* Tinta atenuada sobre fondo claro pierde contraste mucho mas rapido que
+     texto claro sobre fondo oscuro: medido, 0.68 aca da 2.78:1. */
+  opacity: 0.86;
+}
+
+.rg-area__items {
+  margin-top: clamp(26px, 3vw, 40px);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rg-area__items li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  opacity: 0.88;
+}
+
+.rg-area:last-child .rg-area__claim {
+  opacity: 0.72;
+}
+
+.rg-area:last-child .rg-area__items li {
+  opacity: 0.8;
+}
+
+.rg-area__items li::before {
+  content: "";
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 9px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+@media (max-width: 720px) {
+  .rg-area {
+    clip-path: polygon(0 0, calc(100% - 48px) 0, 100% 48px, 100% 100%, 0 100%);
+  }
+
+  .rg-area__head {
+    margin-bottom: 40px;
+  }
+}
