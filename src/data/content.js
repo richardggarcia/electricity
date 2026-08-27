@@ -27,9 +27,9 @@ export const projects = [
 export const services = [
   {
     number: "01",
-    title: "Relevamiento y Planificacion",
+    title: "Relevamiento y Planificación",
     description:
-      "Revisamos la instalacion y definimos circuitos, recorridos, materiales y tareas antes de empezar."
+      "Revisamos la instalación y definimos circuitos, recorridos, materiales y tareas antes de empezar."
   },
   {
     number: "02",
@@ -56,6 +56,6 @@ export const highlights = [
   },
   {
     title: "Seguimiento de Obra",
-    description: "Coordinamos tareas, materiales y avances durante la instalacion."
+    description: "Coordinamos tareas, materiales y avances durante la instalación."
   }
 ];

@@ -114,7 +114,7 @@ export function ContactForm() {
           onChange={handleChange}
           required
           rows="6"
-          placeholder="Alcance, ubicacion, etapa de obra y fecha estimada."
+          placeholder="Alcance, ubicación, etapa de obra y fecha estimada."
         />
       </label>
 

@@ -1038,9 +1038,19 @@ textarea {
 
 .electrical-story__scrim {
   z-index: 2;
+  /* El gradiente lateral y el de base quedan como estaban: medidos, el copy ya
+     pasa 4.5:1 sobre las cuatro fotos. Lo unico que fallaba era la topline, que
+     cae sobre la foto clara de la escena 04, asi que solo se refuerza la banda
+     superior. Oscurecer el centro apagaria la foto sin arreglar nada. */
   background:
     linear-gradient(90deg, rgba(5, 6, 4, 0.96) 0%, rgba(5, 6, 4, 0.68) 35%, rgba(5, 6, 4, 0.08) 72%),
-    linear-gradient(0deg, rgba(5, 6, 4, 0.82) 0%, transparent 36%, rgba(5, 6, 4, 0.25) 100%);
+    linear-gradient(
+      0deg,
+      rgba(5, 6, 4, 0.82) 0%,
+      transparent 38%,
+      rgba(5, 6, 4, 0.62) 76%,
+      rgba(5, 6, 4, 0.9) 100%
+    );
 }
 
 .electrical-story__grain {
@@ -1069,7 +1079,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  color: rgba(241, 240, 232, 0.62);
+  color: rgba(241, 240, 232, 0.92);
   font-family: "Space Grotesk", sans-serif;
   font-size: 0.66rem;
   font-weight: 700;
@@ -1200,8 +1210,8 @@ textarea {
 
   .electrical-story__scrim {
     background:
-      linear-gradient(0deg, rgba(5, 6, 4, 0.98) 0%, rgba(5, 6, 4, 0.76) 44%, rgba(5, 6, 4, 0.12) 82%),
-      linear-gradient(90deg, rgba(5, 6, 4, 0.35), transparent);
+      linear-gradient(0deg, rgba(5, 6, 4, 0.98) 0%, rgba(5, 6, 4, 0.82) 48%, rgba(5, 6, 4, 0.3) 82%),
+      linear-gradient(90deg, rgba(5, 6, 4, 0.45), rgba(5, 6, 4, 0.12));
   }
 
   .electrical-story__copies {

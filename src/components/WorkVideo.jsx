@@ -83,7 +83,7 @@ export function WorkVideo() {
             poster="/media/rg-tablero-poster.jpg"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
-            aria-label="Armado y puesta en servicio de un tablero electrico"
+            aria-label="Armado y puesta en servicio de un tablero eléctrico"
           >
             <source src="/media/rg-tablero-en-servicio.mp4" type="video/mp4" />
           </video>

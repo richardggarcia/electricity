@@ -10,7 +10,7 @@ const scenes = [
   {
     number: "01",
     kicker: "Relevamiento",
-    title: "Primero revisamos la instalacion.",
+    title: "Primero revisamos la instalación.",
     description:
       "Medimos, identificamos circuitos y revisamos el tablero antes de definir el trabajo.",
     image:
@@ -20,9 +20,9 @@ const scenes = [
   {
     number: "02",
     kicker: "Protecciones",
-    title: "Cada circuito, con su proteccion.",
+    title: "Cada circuito, con su protección.",
     description:
-      "Separamos cargas, ordenamos la distribucion y colocamos las protecciones necesarias.",
+      "Separamos cargas, ordenamos la distribución y colocamos las protecciones necesarias.",
     image:
       "https://images.pexels.com/photos/33531832/pexels-photo-33531832.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
@@ -32,7 +32,7 @@ const scenes = [
     kicker: "Montaje",
     title: "Tableros claros y cableado ordenado.",
     description:
-      "Armamos, identificamos y conectamos para que la instalacion sea facil de revisar y mantener.",
+      "Armamos, identificamos y conectamos para que la instalación sea fácil de revisar y mantener.",
     image:
       "https://images.pexels.com/photos/21812146/pexels-photo-21812146.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
@@ -53,6 +53,17 @@ export function ElectricalStory() {
   const sectionRef = useRef(null);
   const stageRef = useRef(null);
   const progressRef = useRef(null);
+  const loadedFrames = useRef(0);
+
+  // ScrollTrigger mide al montar; los frames llegan despues y pueden mover el
+  // alto del pin, asi que se recalcula una vez cuando termina de cargar el set.
+  const handleFrameLoad = () => {
+    loadedFrames.current += 1;
+
+    if (loadedFrames.current === scenes.length) {
+      ScrollTrigger.refresh();
+    }
+  };
 
   useGSAP(
     () => {
@@ -70,7 +81,7 @@ export function ElectricalStory() {
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: "+=240%",
+            end: "+=300%",
             scrub: 0.8,
             pin: stageRef.current,
             anticipatePin: 1,
@@ -100,6 +111,10 @@ export function ElectricalStory() {
               index
             );
         }
+
+        // Sin este tramo la ultima escena entra justo cuando el pin se suelta y
+        // su titulo nunca llega a leerse.
+        timeline.to({}, { duration: 0.6 }, scenes.length);
       });
 
       return () => media.revert();
@@ -120,7 +135,10 @@ export function ElectricalStory() {
               <img
                 src={scene.image}
                 alt=""
-                loading={index === 0 ? "eager" : "lazy"}
+                loading="eager"
+                fetchPriority={index === 0 ? "high" : "low"}
+                decoding="async"
+                onLoad={handleFrameLoad}
                 style={{ objectPosition: scene.position }}
               />
             </div>
@@ -130,7 +148,7 @@ export function ElectricalStory() {
         </div>
 
         <div className="electrical-story__topline">
-          <span>RG ELECTRIC / INSTALACIONES ELECTRICAS</span>
+          <span>RG ELECTRIC / INSTALACIONES ELÉCTRICAS</span>
           <span>SECUENCIA 01-04</span>
         </div>
 

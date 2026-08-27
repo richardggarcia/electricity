@@ -15,11 +15,13 @@ import { Reveal } from "./components/Reveal";
 import { WorkVideo } from "./components/WorkVideo";
 import { accentColor, highlights, projects, services } from "./data/content";
 import { useCinematicSections } from "./hooks/useCinematicSections";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 const serviceIcons = [DraftingCompass, ScanSearch, HardHat];
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useSmoothScroll();
   useCinematicSections();
 
   return (
@@ -71,7 +73,7 @@ export default function App() {
 
           <div className="hero-bottom">
             <p>
-              Instalaciones electricas para viviendas, locales y obras.
+              Instalaciones eléctricas para viviendas, locales y obras.
               Hacemos relevamientos, tableros, montaje y puesta en servicio.
             </p>
 
@@ -239,7 +241,7 @@ export default function App() {
             <strong>RG</strong><span>Electric</span>
           </div>
           <p>
-            Tableros e instalaciones electricas
+            Tableros e instalaciones eléctricas
             <br />
             Caballito, CABA
           </p>
