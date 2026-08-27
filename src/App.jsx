@@ -75,8 +75,8 @@ export default function App() {
           <div className="hero-bottom">
             <p>
               Instalaciones eléctricas y cableado de redes para viviendas,
-              locales y obras en CABA. Relevamos, ejecutamos y te entregamos
-              los planos.
+              locales y obras en CABA. Relevamos, ejecutamos y dejamos todo
+              identificado.
             </p>
 
             <a href="#contacto" className="scroll-link">
@@ -112,8 +112,8 @@ export default function App() {
           <div className="rg-manifesto__heading" data-rg-intro>
             <p className="rg-label">Cómo trabajamos / CABA</p>
             <h2>
-              TODO QUEDA
-              <span>DOCUMENTADO.</span>
+              CADA CIRCUITO
+              <span>IDENTIFICADO.</span>
             </h2>
           </div>
 
@@ -134,8 +134,8 @@ export default function App() {
             <article className="rg-module rg-module--detail" data-rg-item>
               <span className="rg-module__index">02 / EJECUCIÓN</span>
               <p>
-                Ejecutamos, probamos y etiquetamos. Al terminar te entregamos
-                los planos de lo que quedó hecho.
+                Ejecutamos, probamos y rotulamos. Al terminar sabés qué hace
+                cada llave del tablero.
               </p>
               <a href="#rubros" className="rg-arrow-link">
                 Ver rubros <ArrowRight size={18} />
@@ -155,7 +155,7 @@ export default function App() {
           <div className="rg-service-stack">
             {services.map((service, index) => {
               const ServiceIcon = serviceIcons[index];
-              const symbolLabel = ["Relevamiento", "Ejecución", "Entrega"][index];
+              const symbolLabel = ["Relevamiento", "Ejecución", "Pruebas"][index];
 
               return (
                 <article
@@ -211,7 +211,7 @@ export default function App() {
         <section className="rg-standards" data-rg-section>
           <div className="rg-standards__title" data-rg-intro>
             <span className="rg-chevron" aria-hidden="true">&gt;&gt;</span>
-            <h2>ORDEN.<br />PROTECCIÓN.<br />PLANOS.</h2>
+            <h2>ORDEN.<br />PROTECCIÓN.<br />ROTULADO.</h2>
           </div>
           <div className="rg-standards__grid">
             {highlights.map((item, index) => (

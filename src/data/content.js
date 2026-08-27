@@ -26,7 +26,7 @@ export const areas = [
       "Cableado estructurado UTP y fibra",
       "Racks, patcheras y organización",
       "Puntos de acceso y cobertura WiFi",
-      "Bocas etiquetadas y plano de red"
+      "Bocas numeradas y etiquetadas"
     ]
   }
 ];
@@ -73,16 +73,16 @@ export const services = [
   },
   {
     number: "03",
-    title: "Documentación y Entrega",
+    title: "Pruebas y Entrega",
     description:
-      "Probamos, etiquetamos y entregamos los planos de lo que quedó instalado."
+      "Probamos circuito por circuito y dejamos el tablero rotulado antes de irnos."
   }
 ];
 
 export const highlights = [
   {
-    title: "Planos y Diagramas",
-    description: "Planos, diagramas y referencias para que quede registrado lo que se hizo."
+    title: "Tablero Rotulado",
+    description: "Cada llave con su rótulo, para saber qué corta cada una sin adivinar."
   },
   {
     title: "Protecciones e Identificación",
