@@ -43,13 +43,13 @@ export function ContactForm() {
         setForm(initialForm);
         setStatus({
           type: "success",
-          message: "Consulta enviada. Te responderemos a la brevedad."
+          message: "Recibimos tu consulta. Te vamos a responder por correo."
         });
       });
     } catch (error) {
       setStatus({
         type: "error",
-        message: error.message || "Ocurrio un error al enviar la consulta."
+        message: error.message || "No pudimos enviar tu consulta. Probá de nuevo o escribinos por WhatsApp."
       });
     } finally {
       setIsSubmitting(false);
@@ -62,6 +62,7 @@ export function ContactForm() {
         <label>
           Nombre
           <input
+            autoComplete="name"
             name="name"
             type="text"
             value={form.name}
@@ -74,18 +75,20 @@ export function ContactForm() {
         <label>
           Email
           <input
+            autoComplete="email"
             name="email"
             type="email"
             value={form.email}
             onChange={handleChange}
             required
-            placeholder="correo@empresa.com"
+            placeholder="Tu correo electrónico"
           />
         </label>
 
         <label>
-          Telefono
+          Teléfono (opcional)
           <input
+            autoComplete="tel"
             name="phone"
             type="tel"
             value={form.phone}
@@ -95,26 +98,26 @@ export function ContactForm() {
         </label>
 
         <label>
-          Tipo de proyecto
+          Tipo de trabajo (opcional)
           <input
             name="projectType"
             type="text"
             value={form.projectType}
             onChange={handleChange}
-            placeholder="Residencial, comercial, reforma..."
+            placeholder="Tablero, instalación, cableado de red..."
           />
         </label>
       </div>
 
       <label>
-        Contanos la necesidad
+        ¿Qué necesitás resolver?
         <textarea
           name="message"
           value={form.message}
           onChange={handleChange}
           required
           rows="6"
-          placeholder="Alcance, ubicación, etapa de obra y fecha estimada."
+          placeholder="Contanos qué trabajo necesitás, en qué barrio y para cuándo."
         />
       </label>
 
@@ -125,7 +128,7 @@ export function ContactForm() {
         </button>
 
         {status.type !== "idle" ? (
-          <p className={`form-message form-message--${status.type}`}>{status.message}</p>
+          <p role="status" aria-live="polite" className={`form-message form-message--${status.type}`}>{status.message}</p>
         ) : null}
       </div>
     </form>

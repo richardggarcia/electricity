@@ -7,6 +7,53 @@
   --rg-radius: 34px;
 }
 
+.whatsapp-cta {
+  margin-top: 28px;
+  padding: 16px 22px;
+  gap: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--accent);
+  color: var(--rg-black);
+  min-height: 48px;
+}
+
+.rg-modular .electrical-story {
+  color: #ffffff;
+}
+
+.rg-areas .rg-section-heading h2 {
+  font-size: clamp(2.1rem, 8.3vw, 9rem);
+}
+
+.hero-bottom .scroll-link__icon svg {
+  transform: none;
+}
+
+.rg-contact__intro .contact-phone {
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.rg-service-card__symbol {
+  min-height: 200px;
+}
+
+@media (max-width: 680px) {
+  .rg-areas .rg-section-heading h2 {
+    font-size: clamp(2.1rem, 11.8vw, 4.5rem);
+  }
+  .rg-services .rg-service-card {
+    min-height: 460px;
+    grid-template-rows: auto 160px;
+  }
+  .rg-services .rg-service-card h3 {
+    margin-top: 16px;
+    font-size: clamp(2rem, 10.8vw, 3.6rem);
+    overflow-wrap: anywhere;
+  }
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -107,6 +154,7 @@
 }
 
 #tablero,
+#rubros,
 #obra-real,
 #servicios,
 #proyectos,
@@ -686,7 +734,7 @@
   font-size: clamp(4rem, 7.7vw, 9rem);
 }
 
-.rg-contact__intro > p:last-child {
+.rg-contact__intro > p:not(.rg-label):not(.contact-phone) {
   max-width: 520px;
   margin-top: 32px;
   font-size: 1.05rem;
@@ -1051,7 +1099,7 @@
 
 .rg-areas__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: var(--rg-gap);
   padding: 0 var(--rg-gap) var(--rg-gap);
 }

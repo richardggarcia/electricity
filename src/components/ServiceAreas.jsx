@@ -12,8 +12,8 @@ export function ServiceAreas() {
   return (
     <section className="rg-areas" id="rubros" data-rg-section>
       <div className="rg-section-heading" data-rg-intro>
-        <p className="rg-label">Rubros</p>
-        <h2>ELÉCTRICA<br />Y REDES.</h2>
+        <p className="rg-label">Servicios / CABA</p>
+        <h2>ELECTRICIDAD<br />Y REDES.</h2>
       </div>
 
       <div className="rg-areas__grid">
@@ -23,7 +23,6 @@ export function ServiceAreas() {
           return (
             <article className="rg-area" data-rg-item key={area.id}>
               <div className="rg-area__head">
-                <span className="rg-card-number">{area.number}</span>
                 {AreaIcon ? (
                   <AreaIcon strokeWidth={1.15} aria-hidden="true" />
                 ) : null}

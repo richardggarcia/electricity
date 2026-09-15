@@ -62,13 +62,13 @@ export function WorkVideo() {
           <span>PUESTA EN SERVICIO.</span>
         </h2>
         <p className="rg-work-video__description">
-          Armado, conexionado y puesta en servicio del tablero.
+          Un registro de mi participación en obra: armado, conexionado y puesta en servicio del tablero.
         </p>
 
         <div className="rg-work-video__steps" aria-label="Etapas del trabajo">
-          <span><b>01</b> Armado</span>
-          <span><b>02</b> Terminado</span>
-          <span><b>03</b> En servicio</span>
+          <span>Armado</span>
+          <span>Terminado</span>
+          <span>En servicio</span>
         </div>
       </div>
 

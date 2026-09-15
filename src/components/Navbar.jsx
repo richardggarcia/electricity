@@ -1,5 +1,6 @@
 import { Instagram, Menu } from "lucide-react";
 import { TikTokIcon } from "./TikTokIcon";
+import { whatsappUrl } from "../data/contact";
 
 export function Navbar({ onOpenMenu }) {
   return (
@@ -10,7 +11,7 @@ export function Navbar({ onOpenMenu }) {
       </a>
 
       <div className="nav-links">
-        <a href="#rubros">Rubros</a>
+        <a href="#rubros">Servicios</a>
         <a href="#obra-real">Trabajos</a>
         <a href="#servicios">Proceso</a>
         <a
@@ -31,8 +32,8 @@ export function Navbar({ onOpenMenu }) {
         >
           <TikTokIcon size={18} />
         </a>
-        <a href="#contacto" className="button button-dark">
-          Contacto
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" className="button button-dark">
+          WhatsApp
         </a>
         <button
           className="menu-button"

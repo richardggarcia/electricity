@@ -8,12 +8,12 @@ export const areas = [
   {
     id: "electrica",
     number: "01",
-    name: "Eléctrica",
+    name: "Electricidad",
     claim: "Tableros, circuitos y protecciones.",
     items: [
       "Tableros nuevos y adecuación de existentes",
       "Canalizaciones, tendido y conexionado",
-      "Una protección por circuito, identificada",
+      "Revisión y reemplazo de protecciones",
       "Pruebas y puesta en servicio"
     ]
   },
@@ -21,12 +21,12 @@ export const areas = [
     id: "redes",
     number: "02",
     name: "Redes",
-    claim: "Cableado estructurado y conectividad.",
+    claim: "Cableado de red para locales, oficinas y viviendas.",
     items: [
-      "Cableado estructurado UTP y fibra",
-      "Racks, patcheras y organización",
-      "Puntos de acceso y cobertura WiFi",
-      "Bocas numeradas y etiquetadas"
+      "Cableado estructurado UTP",
+      "Montaje de racks y patcheras",
+      "Instalación de bocas de red",
+      "Ordenamiento del cableado existente"
     ]
   }
 ];
@@ -61,21 +61,21 @@ export const projects = [
 export const services = [
   {
     number: "01",
-    title: "Relevamiento y Planificación",
+    title: "Visita y presupuesto",
     description:
-      "Vamos al lugar, revisamos lo que hay y definimos alcance, materiales y tiempos antes de empezar."
+      "Conversamos sobre lo que necesitás y coordinamos una visita cuando hace falta. Con esa información preparamos el presupuesto."
   },
   {
     number: "02",
-    title: "Ejecución en Obra",
+    title: "Instalación",
     description:
-      "Hacemos el trabajo coordinando con el resto de la obra, sin dejar frentes abiertos."
+      "Acordamos las tareas y las fechas antes de empezar. Si hay otros gremios trabajando, coordinamos con ellos."
   },
   {
     number: "03",
-    title: "Pruebas y Entrega",
+    title: "Revisión final",
     description:
-      "Probamos circuito por circuito y dejamos el tablero rotulado antes de irnos."
+      "Revisamos el funcionamiento de la instalación y te explicamos qué se hizo."
   }
 ];
 

@@ -10,9 +10,9 @@ const scenes = [
   {
     number: "01",
     kicker: "Relevamiento",
-    title: "Primero revisamos la instalación.",
+    title: "Revisión de la instalación.",
     description:
-      "Medimos, identificamos circuitos y revisamos el tablero antes de definir el trabajo.",
+      "Revisamos el tablero y los circuitos para determinar qué hay que reparar, cambiar o ampliar.",
     image:
       "https://images.unsplash.com/photo-1758101755915-462eddc23f57?auto=format&fit=crop&fm=webp&q=82&w=2200",
     position: "center"
@@ -20,9 +20,9 @@ const scenes = [
   {
     number: "02",
     kicker: "Protecciones",
-    title: "Cada circuito, con su protección.",
+    title: "Reparaciones y mejoras.",
     description:
-      "Separamos cargas, ordenamos la distribución y colocamos las protecciones necesarias.",
+      "Reemplazamos componentes deteriorados y adecuamos las protecciones según el trabajo previsto.",
     image:
       "https://images.pexels.com/photos/33531832/pexels-photo-33531832.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
@@ -30,9 +30,9 @@ const scenes = [
   {
     number: "03",
     kicker: "Montaje",
-    title: "Tableros claros y cableado ordenado.",
+    title: "Armado de tableros.",
     description:
-      "Armamos, identificamos y conectamos para que la instalación sea fácil de revisar y mantener.",
+      "Montamos y conectamos los componentes del tablero, tanto en instalaciones nuevas como en reformas.",
     image:
       "https://images.pexels.com/photos/21812146/pexels-photo-21812146.jpeg?auto=compress&cs=tinysrgb&w=2200",
     position: "center"
@@ -40,9 +40,9 @@ const scenes = [
   {
     number: "04",
     kicker: "Pruebas",
-    title: "Probamos todo antes de entregar.",
+    title: "Pruebas de funcionamiento.",
     description:
-      "Revisamos conexiones, protecciones y funcionamiento antes de dar el trabajo por terminado.",
+      "Realizamos las comprobaciones de la instalación y revisamos las conexiones antes de la puesta en servicio.",
     image:
       "https://images.unsplash.com/photo-1744780940897-ef6337888c6e?auto=format&fit=crop&fm=webp&q=82&w=2200",
     position: "center"
@@ -81,7 +81,7 @@ export function ElectricalStory() {
           scrollTrigger: {
             trigger: section,
             start: "top top",
-            end: "+=300%",
+            end: () => window.innerWidth <= 680 ? "+=150%" : "+=220%",
             scrub: 0.8,
             pin: stageRef.current,
             anticipatePin: 1,
@@ -149,7 +149,7 @@ export function ElectricalStory() {
 
         <div className="electrical-story__topline">
           <span>RG ELECTRIC / INSTALACIONES ELÉCTRICAS</span>
-          <span>SECUENCIA 01-04</span>
+          <span>EN OBRA</span>
         </div>
 
         <div className="electrical-story__copies">
@@ -159,7 +159,7 @@ export function ElectricalStory() {
               data-story-copy
               key={scene.number}
             >
-              <p>{scene.number} / {scene.kicker}</p>
+              <p>{scene.kicker}</p>
               <h2>{scene.title}</h2>
               <span>{scene.description}</span>
             </article>
@@ -171,10 +171,10 @@ export function ElectricalStory() {
             <span ref={progressRef} />
           </div>
           <div className="electrical-story__scroll">
-            Scroll para avanzar <ArrowDown size={14} />
+            Deslizá para ver más <ArrowDown size={14} />
           </div>
           <div className="electrical-story__credits">
-            Fotos de prueba: <a href="https://unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk" target="_blank" rel="noreferrer">Unsplash</a>
+            Imágenes de referencia: <a href="https://unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk" target="_blank" rel="noreferrer">Unsplash</a>
             {" / "}
             <a href="https://www.pexels.com/photo/electrician-diagnosing-electrical-panel-with-multimeter-34054464/" target="_blank" rel="noreferrer">Pexels</a>
           </div>

@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  ArrowUpRight,
   DraftingCompass,
   HardHat,
   ScanSearch,
@@ -14,9 +13,11 @@ import { Navbar } from "./components/Navbar";
 import { Reveal } from "./components/Reveal";
 import { ServiceAreas } from "./components/ServiceAreas";
 import { WorkVideo } from "./components/WorkVideo";
-import { accentColor, highlights, projects, services } from "./data/content";
+import { accentColor, services } from "./data/content";
 import { useCinematicSections } from "./hooks/useCinematicSections";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
+
+import { whatsappUrl, contactPhone } from "./data/contact";
 
 const serviceIcons = [DraftingCompass, ScanSearch, HardHat];
 
@@ -74,16 +75,15 @@ export default function App() {
 
           <div className="hero-bottom">
             <p>
-              Instalaciones eléctricas y cableado de redes para viviendas,
-              locales y obras en CABA. Relevamos, ejecutamos y dejamos todo
-              identificado.
+              Instalaciones nuevas, reformas y armado de tableros para viviendas,
+              locales y obras en CABA. También instalamos cableado de redes.
             </p>
 
-            <a href="#contacto" className="scroll-link">
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="scroll-link">
               <span className="scroll-link__icon">
                 <ArrowRight size={18} />
               </span>
-              <span>Contanos qué necesitás</span>
+              <span>Consultar por WhatsApp</span>
             </a>
           </div>
         </Reveal>
@@ -96,53 +96,15 @@ export default function App() {
               <span>INSTALACIONES ELECTRICAS</span>
               <Zap size={20} style={{ color: accentColor }} />
               <span className="muted">ARMADO DE TABLEROS</span>
-              <span>RELEVAMIENTOS Y MEDICIONES</span>
+              <span>CABLEADO DE REDES</span>
               <Zap size={20} style={{ color: accentColor }} />
             </div>
           ))}
         </div>
       </section>
 
-      <ElectricalStory />
-
       <main className="rg-modular">
         <WorkVideo />
-
-        <section className="rg-manifesto" data-rg-section>
-          <div className="rg-manifesto__heading" data-rg-intro>
-            <p className="rg-label">Cómo trabajamos / CABA</p>
-            <h2>
-              CADA CIRCUITO
-              <span>IDENTIFICADO.</span>
-            </h2>
-          </div>
-
-          <div className="rg-manifesto__grid">
-            <article className="rg-module rg-module--statement" data-rg-item>
-              <span className="rg-module__index">01 / RELEVAMIENTO</span>
-              <p>
-                Revisamos el lugar y lo que ya está instalado antes de definir
-                materiales, tiempos y tareas.
-              </p>
-            </article>
-
-            <article className="rg-module rg-module--monogram" data-rg-item>
-              <span>RG</span>
-              <div className="rg-pulse" aria-hidden="true" />
-            </article>
-
-            <article className="rg-module rg-module--detail" data-rg-item>
-              <span className="rg-module__index">02 / EJECUCIÓN</span>
-              <p>
-                Ejecutamos, probamos y rotulamos. Al terminar sabés qué hace
-                cada llave del tablero.
-              </p>
-              <a href="#rubros" className="rg-arrow-link">
-                Ver rubros <ArrowRight size={18} />
-              </a>
-            </article>
-          </div>
-        </section>
 
         <ServiceAreas />
 
@@ -165,12 +127,10 @@ export default function App() {
                   key={service.number}
                 >
                   <div className="rg-service-card__copy">
-                    <span className="rg-card-number">{service.number}</span>
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
                   </div>
                   <div className="rg-service-card__symbol" aria-hidden="true">
-                    <span>{service.number}</span>
                     <ServiceIcon strokeWidth={1.15} />
                     <small>{symbolLabel}</small>
                   </div>
@@ -180,58 +140,18 @@ export default function App() {
           </div>
         </section>
 
-        <section className="rg-projects" id="proyectos" data-rg-section>
-          <div className="rg-section-heading rg-section-heading--projects" data-rg-intro>
-            <p className="rg-label">Residencial y comercial</p>
-            <h2>TIPOS DE<br />TRABAJO.</h2>
-            <p>
-              Instalaciones nuevas, reformas, armado de tableros y adecuaciones
-              sobre instalaciones existentes.
-            </p>
-          </div>
-
-          <div className="rg-project-grid">
-            {projects.map((project, index) => (
-              <article className={`rg-project rg-project--${index + 1}`} data-rg-item key={project.title}>
-                <img src={project.image} alt={project.title} loading="lazy" />
-                <div className="rg-project__veil" />
-                <div className="rg-project__top">
-                  <span>{project.year}</span>
-                  <ArrowUpRight size={22} />
-                </div>
-                <div className="rg-project__copy">
-                  <p>{project.location}</p>
-                  <h3>{project.title}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="rg-standards" data-rg-section>
-          <div className="rg-standards__title" data-rg-intro>
-            <span className="rg-chevron" aria-hidden="true">&gt;&gt;</span>
-            <h2>ORDEN.<br />PROTECCIÓN.<br />ROTULADO.</h2>
-          </div>
-          <div className="rg-standards__grid">
-            {highlights.map((item, index) => (
-              <article data-rg-item key={item.title}>
-                <span>0{index + 1}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        <ElectricalStory />
 
         <section className="rg-contact" id="contacto" data-rg-section>
           <div className="rg-contact__intro" data-rg-intro>
             <p className="rg-label">Consultas</p>
             <h2>CONTANOS<br />QUÉ NECESITÁS.</h2>
             <p>
-              Decinos dónde es el trabajo, qué necesitás resolver y en qué etapa
-              está la obra. Te respondemos por correo.
+              Mandanos fotos, la ubicación y qué necesitás resolver por WhatsApp.
+              Si preferís correo, completá el formulario.
             </p>
+            <a className="button whatsapp-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Consultar por WhatsApp <ArrowRight size={18} /></a>
+            <p className="contact-phone">{contactPhone}</p>
           </div>
           <Reveal className="rg-contact__form">
             <ContactForm />
@@ -254,7 +174,7 @@ export default function App() {
         <div className="footer-meta">
           <div>
             <span>Contacto</span>
-            <a href="#contacto">Enviar una consulta</a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: {contactPhone}</a>
           </div>
           <div>
             <span>Ubicación</span>

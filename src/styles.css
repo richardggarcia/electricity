@@ -218,8 +218,8 @@ textarea {
 }
 
 .hero-copy h1 span {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(241, 240, 232, 0.3);
+  color: var(--accent);
+  -webkit-text-stroke: 0;
 }
 
 .hero-energy {

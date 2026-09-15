@@ -1,5 +1,6 @@
 import { Instagram, X } from "lucide-react";
 import { TikTokIcon } from "./TikTokIcon";
+import { whatsappUrl } from "../data/contact";
 
 export function MobileMenu({ isOpen, onClose }) {
   if (!isOpen) {
@@ -22,14 +23,14 @@ export function MobileMenu({ isOpen, onClose }) {
         <a href="#obra-real" onClick={onClose}>
           Trabajos
         </a>
-        <a href="#servicios" onClick={onClose}>
+        <a href="#rubros" onClick={onClose}>
           Servicios
         </a>
-        <a href="#tablero" onClick={onClose}>
+        <a href="#servicios" onClick={onClose}>
           Proceso
         </a>
-        <a href="#contacto" onClick={onClose}>
-          Contacto
+        <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={onClose}>
+          WhatsApp
         </a>
         <div className="mobile-menu__socials">
           <a
