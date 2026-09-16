@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
+import { mediaUrl } from "../data/media";
 import "./VictronProject.css";
 
 const stages = [
@@ -31,7 +32,7 @@ export function VictronProject() {
           </button>
         </div>
         <figure className="victron-project__cover">
-          <img src="/media/victron/baterias.jpg" width="900" height="1600"
+          <img src={mediaUrl("trabajos/victron/baterias.jpg")} width="900" height="1600"
             loading="lazy" alt="Banco de baterías junto a las bandejas y los equipos Victron" />
           <figcaption>Imágenes reales del montaje</figcaption>
         </figure>
@@ -41,7 +42,7 @@ export function VictronProject() {
           <div className="victron-project__gallery">
             {stages.map((stage) => (
               <figure key={stage.image}>
-                <img src={`/media/victron/${stage.image}.jpg`} loading="lazy"
+                <img src={mediaUrl(`trabajos/victron/${stage.image}.jpg`)} loading="lazy"
                   width="720" height="1280" alt={stage.text} />
                 <figcaption><h3>{stage.title}</h3><p>{stage.text}</p></figcaption>
               </figure>
@@ -54,9 +55,9 @@ export function VictronProject() {
                 Reproducilo para ver los detalles del montaje.</p>
             </div>
             <video controls muted playsInline preload="none"
-              poster="/media/victron/baterias.jpg"
+              poster={mediaUrl("trabajos/victron/baterias.jpg")}
               aria-label="Recorrido del montaje con equipos Victron y banco de baterías">
-              <source src="/media/victron/recorrido.mp4" type="video/mp4" />
+              <source src={mediaUrl("trabajos/victron/recorrido.mp4")} type="video/mp4" />
             </video>
           </div>
         </>}

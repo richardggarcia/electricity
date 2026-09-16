@@ -1,5 +1,6 @@
 import { Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { mediaUrl } from "../data/media";
 
 export function WorkVideo() {
   const mediaRef = useRef(null);
@@ -88,7 +89,7 @@ export function WorkVideo() {
             onPause={() => setIsPlaying(false)}
             aria-label="Armado y puesta en servicio de un tablero eléctrico"
           >
-            <source src="/media/rg-tablero-en-servicio.mp4" type="video/mp4" />
+            <source src={mediaUrl("home/rg-tablero-en-servicio.mp4")} type="video/mp4" />
           </video>
 
           <div className="rg-work-video__controls">
