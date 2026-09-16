@@ -70,6 +70,9 @@ export function WorkVideo() {
           <span>Terminado</span>
           <span>En servicio</span>
         </div>
+        <a className="work-more-link" href="/trabajos/">
+          Ver más trabajos <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
       <div className="rg-work-video__media" data-rg-item ref={mediaRef}>

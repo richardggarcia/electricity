@@ -1,0 +1,58 @@
+.victron-project {
+  margin-block: 6px;
+  border: 1px solid #ffffff24;
+  border-radius: var(--rg-radius);
+  background: #11120f;
+  color: #fff;
+  overflow: hidden;
+}
+.victron-project__overview {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 90px);
+  padding: clamp(28px, 6vw, 88px);
+}
+.victron-project__copy .rg-label { color: var(--accent); }
+.victron-project .victron-project__copy h2 {
+  margin-block: 30px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.6rem, 5.5vw, 6rem);
+  line-height: .95;
+  letter-spacing: -.06em;
+}
+.victron-project__copy h2 span { color: var(--accent); }
+.victron-project__copy > p:not(.rg-label),
+.victron-project__video p:not(.rg-label) {
+  max-width: 48ch;
+  color: #c2c4bb;
+  line-height: 1.65;
+}
+.victron-project__tags { display: flex; flex-wrap: wrap; gap: 10px; margin-block: 26px; }
+.victron-project__tags span { border: 1px solid #ffffff30; padding: 8px 12px; font-size: .75rem; }
+.victron-project__toggle {
+  display: inline-flex; align-items: center; gap: 28px;
+  padding: 16px 22px; border: 0; background: var(--accent);
+  color: #080907; font: inherit; font-weight: 700; cursor: pointer;
+}
+.victron-project__toggle:focus-visible { outline: 3px solid white; outline-offset: 5px; }
+.victron-project figure { margin: 0; }
+.victron-project__cover { width: min(100%, 370px); justify-self: center; }
+.victron-project__cover img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.victron-project__cover figcaption { padding-top: 14px; color: #b9bcb1; font-size: .75rem; }
+.victron-project__process { border-top: 1px solid #ffffff25; padding: clamp(24px, 4vw, 64px); }
+.victron-project__gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.victron-project__gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
+.victron-project .victron-project__gallery h3 { margin-block: 18px 8px; font-size: 1.1rem; }
+.victron-project__gallery p { font-size: .9rem; line-height: 1.6; color: #b9bcb1; }
+.victron-project__video { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-top: 56px; }
+.victron-project .victron-project__video h3 { font-family: "Space Grotesk", sans-serif; font-size: clamp(2rem, 4vw, 4rem); line-height: 1; margin-block: 24px; }
+.victron-project__video video { display: block; width: min(100%, 340px); aspect-ratio: 9/16; justify-self: center; background: #080907; }
+@media (max-width: 760px) {
+  .victron-project__overview, .victron-project__video { grid-template-columns: 1fr; }
+  .victron-project__gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .victron-project .victron-project__copy h2 { font-size: clamp(2rem, 9vw, 4rem); }
+}
+@media (max-width: 420px) {
+  .victron-project__gallery { grid-template-columns: 1fr; gap: 32px; }
+}

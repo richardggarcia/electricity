@@ -7,3 +7,7 @@ dist
 /voltio-desktop-hero.png
 .vercel
 .gstack/
+
+# scratch local
+tmp/
+output/

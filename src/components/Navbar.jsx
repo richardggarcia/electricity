@@ -5,15 +5,15 @@ import { whatsappUrl } from "../data/contact";
 export function Navbar({ onOpenMenu }) {
   return (
     <nav className="site-nav">
-      <a className="brand" href="#inicio">
+      <a className="brand" href="/#inicio">
         <strong>RG</strong>
         <span>Electric</span>
       </a>
 
       <div className="nav-links">
-        <a href="#rubros">Servicios</a>
-        <a href="#obra-real">Trabajos</a>
-        <a href="#servicios">Proceso</a>
+        <a href="/#rubros">Servicios</a>
+        <a href="/trabajos/">Trabajos</a>
+        <a href="/#servicios">Proceso</a>
         <a
           className="nav-social"
           href="https://www.instagram.com/rggelectric/"

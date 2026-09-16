@@ -20,13 +20,13 @@ export function MobileMenu({ isOpen, onClose }) {
       </div>
 
       <div className="mobile-menu__links">
-        <a href="#obra-real" onClick={onClose}>
+        <a href="/trabajos/" onClick={onClose}>
           Trabajos
         </a>
-        <a href="#rubros" onClick={onClose}>
+        <a href="/#rubros" onClick={onClose}>
           Servicios
         </a>
-        <a href="#servicios" onClick={onClose}>
+        <a href="/#servicios" onClick={onClose}>
           Proceso
         </a>
         <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={onClose}>
