@@ -11,11 +11,10 @@ Landing de RG Electric (React 19 + Vite + Cloudflare Workers, form de contacto v
 
 ## Cargar un trabajo nuevo
 
-1. Copiar las fotos y videos del celular a una carpeta (nombres descriptivos ayudan: `montaje.MOV`).
-2. `scripts/subir-trabajo.sh <carpeta> <slug>` — deja los convertidos en `tmp/trabajos/<slug>/`,
-   los sube a R2 e imprime el bloque para el catálogo.
-3. Pegar el bloque en `src/data/trabajos.js` y completar títulos y textos.
-4. `npm run deploy`.
+**Invocar `/trabajo`** (skill del repo en `.claude/skills/trabajo/SKILL.md`): pide la carpeta y el
+slug, corre `scripts/subir-trabajo.sh`, propone los textos, agrega la entrada a
+`src/data/trabajos.js`, verifica en navegador y pide el deploy. Si Richard dice "subí el trabajo",
+"tengo fotos de una obra" o similar, es eso.
 
 Los archivos se sirven desde `https://media.rgelectric.bitsdeve.com/trabajos/<slug>/…` (R2).
 Nunca poner videos en `public/`: ver AGENTS.md.
@@ -38,3 +37,4 @@ Key routing rules:
 - Save progress → invoke /context-save
 - Resume context → invoke /context-restore
 - Author a backlog-ready spec/issue → invoke /spec
+- Subir fotos/videos de una obra nueva → invoke /trabajo

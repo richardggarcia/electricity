@@ -22,6 +22,8 @@ Secrets del formulario (ya cargados en el worker; `npx wrangler secret list` par
 
 ## Media (fotos y videos)
 
+- Para cargar un trabajo nuevo seguir `.claude/skills/trabajo/SKILL.md` paso a paso (sirve para cualquier agente, no solo Claude).
+
 - Ningún video entra al repo ni a `public/`. Cloudflare Assets no responde Range requests: un
   mp4 servido desde ahí no se puede adelantar en el reproductor. R2 sí (206).
 - Subir con `scripts/subir-trabajo.sh <carpeta> <slug>`: convierte, quita metadatos (las fotos del
