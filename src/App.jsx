@@ -17,7 +17,7 @@ import { accentColor, services } from "./data/content";
 import { useCinematicSections } from "./hooks/useCinematicSections";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
-import { whatsappUrl, contactPhone } from "./data/contact";
+import { whatsappUrl } from "./data/contact";
 
 const serviceIcons = [DraftingCompass, ScanSearch, HardHat];
 
@@ -151,7 +151,6 @@ export default function App() {
               Si preferís correo, completá el formulario.
             </p>
             <a className="button whatsapp-cta" href={whatsappUrl} target="_blank" rel="noreferrer">Consultar por WhatsApp <ArrowRight size={18} /></a>
-            <p className="contact-phone">{contactPhone}</p>
           </div>
           <Reveal className="rg-contact__form">
             <ContactForm />
@@ -174,7 +173,7 @@ export default function App() {
         <div className="footer-meta">
           <div>
             <span>Contacto</span>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp: {contactPhone}</a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
           <div>
             <span>Ubicación</span>

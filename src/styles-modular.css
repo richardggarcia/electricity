@@ -53,11 +53,6 @@
   transform: none;
 }
 
-.rg-contact__intro .contact-phone {
-  margin-top: 12px;
-  font-size: 0.95rem;
-}
-
 .rg-service-card__symbol {
   min-height: 200px;
 }
@@ -757,7 +752,7 @@
   font-size: clamp(4rem, 7.7vw, 9rem);
 }
 
-.rg-contact__intro > p:not(.rg-label):not(.contact-phone) {
+.rg-contact__intro > p:not(.rg-label) {
   max-width: 520px;
   margin-top: 32px;
   font-size: 1.05rem;
