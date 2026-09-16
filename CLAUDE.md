@@ -7,6 +7,18 @@ Landing de RG Electric (React 19 + Vite + Cloudflare Workers, form de contacto v
 - `npm run dev` — worker (8787) + Vite en paralelo
 - `npm run build` — build de producción
 - `npm run deploy` — build + wrangler deploy
+- `scripts/subir-trabajo.sh <carpeta> <slug>` — convierte fotos/videos de una obra y los sube a R2
+
+## Cargar un trabajo nuevo
+
+1. Copiar las fotos y videos del celular a una carpeta (nombres descriptivos ayudan: `montaje.MOV`).
+2. `scripts/subir-trabajo.sh <carpeta> <slug>` — deja los convertidos en `tmp/trabajos/<slug>/`,
+   los sube a R2 e imprime el bloque para el catálogo.
+3. Pegar el bloque en `src/data/trabajos.js` y completar títulos y textos.
+4. `npm run deploy`.
+
+Los archivos se sirven desde `https://media.rgelectric.bitsdeve.com/trabajos/<slug>/…` (R2).
+Nunca poner videos en `public/`: ver AGENTS.md.
 
 ## Skill routing
 

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
-import { VictronProject } from "./components/VictronProject";
+import { TrabajoCard } from "./components/TrabajoCard";
+import { trabajos } from "./data/trabajos";
 import { whatsappUrl } from "./data/contact";
 import "./styles.css";
 import "./styles-modular.css";
@@ -21,7 +22,7 @@ function WorksPage() {
           <h1>TRABAJOS.</h1>
           <p>Fotos y videos del proceso, los equipos y el montaje.</p>
         </header>
-        <VictronProject />
+        {trabajos.map((trabajo) => <TrabajoCard key={trabajo.slug} trabajo={trabajo} />)}
       </main>
       <footer className="footer">
         <div><a className="brand" href="/"><strong>RG</strong><span>Electric</span></a>

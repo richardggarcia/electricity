@@ -2,32 +2,33 @@
 
 ## Identidad del proyecto
 
-- Carpeta canonica: `/Users/richardgarcia/dev_projects/landingelectri`
+- Carpeta canónica: `/Users/richardgarcia/dev_projects/landingelectri`
 - Repositorio: `richardggarcia/electricity`
-- Proyecto Vercel: `rgelectric`
-- Dominio de produccion: `https://rgelectric.bitsdeve.com`
-- Cuenta Vercel: `richardggarcia`
-- Equipo Vercel: `team_hkvmTD03Su7QfvCb0Yw02h78`
+- Hosting: Cloudflare Workers, worker `landingelectri` (assets estáticos en `dist/` + `worker/index.js`)
+- Dominio de producción: `https://rgelectric.bitsdeve.com` (custom domain del worker, atado desde el dashboard)
+- URL de prueba: `https://landingelectri.poricobdicia.workers.dev` (mismo deploy)
+- Media: bucket R2 `rgelectric-media`, público en `https://media.rgelectric.bitsdeve.com`
+- DNS de `bitsdeve.com`: Cloudflare
 
-## Despliegue seguro
+## Despliegue
 
-1. Trabajar unicamente desde la carpeta canonica.
-2. Ejecutar `git status --short --branch` y no descartar cambios existentes.
-3. Ejecutar `npm run build` y corregir cualquier error antes de desplegar.
-4. Verificar que `.vercel/project.json` indique `projectName: rgelectric` y el equipo esperado.
-5. Desplegar con:
+1. Trabajar únicamente desde la carpeta canónica.
+2. `git status --short --branch` y no descartar cambios existentes.
+3. `npm run build` y corregir cualquier error antes de desplegar.
+4. `npm run deploy` (build + `wrangler deploy`). No hay CI: el deploy sale de esta máquina.
 
-```bash
-/Users/richardgarcia/dev_projects/general/scripts/vercel-safe-deploy.sh \
-  /Users/richardgarcia/dev_projects/landingelectri \
-  rgelectric
-```
+Secrets del formulario (ya cargados en el worker; `npx wrangler secret list` para ver los nombres):
+`CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`, `RESEND_API_KEY`. Para desarrollo local van en `.dev.vars` (ignorado por git).
 
-No ejecutar `vercel --prod` desde otra carpeta y no volver a enlazar el proyecto con otro nombre.
+## Media (fotos y videos)
 
-## Produccion
+- Ningún video entra al repo ni a `public/`. Cloudflare Assets no responde Range requests: un
+  mp4 servido desde ahí no se puede adelantar en el reproductor. R2 sí (206).
+- Subir con `scripts/subir-trabajo.sh <carpeta> <slug>`: convierte, quita metadatos (las fotos del
+  celular traen GPS) y sube a `trabajos/<slug>/` en R2. Las URLs se arman con `mediaUrl()` de `src/data/media.js`.
+- El CDN cachea un año (`immutable`): para reemplazar un archivo, usar otro nombre.
 
-- Vercel sirve el frontend Vite y la funcion `api/contact.js`.
-- La funcion necesita `FROM_EMAIL`, `TO_EMAIL` y `RESEND_API_KEY` en Vercel.
-- El DNS de `rgelectric.bitsdeve.com` se administra en Cloudflare.
-- No modificar otros proyectos, dominios o registros DNS durante un despliegue de RG Electric.
+## Cuidados
+
+- No modificar otros workers, buckets, dominios ni registros DNS durante un despliegue de RG Electric.
+- No publicar ubicación ni datos de clientes: ni en fotos (metadatos), ni en textos, ni en commits.
