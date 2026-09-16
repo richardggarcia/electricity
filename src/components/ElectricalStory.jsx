@@ -173,11 +173,6 @@ export function ElectricalStory() {
           <div className="electrical-story__scroll">
             Deslizá para ver más <ArrowDown size={14} />
           </div>
-          <div className="electrical-story__credits">
-            Imágenes de referencia: <a href="https://unsplash.com/photos/electrician-testing-electrical-panel-with-multimeter-PkHf7BUWbtk" target="_blank" rel="noreferrer">Unsplash</a>
-            {" / "}
-            <a href="https://www.pexels.com/photo/electrician-diagnosing-electrical-panel-with-multimeter-34054464/" target="_blank" rel="noreferrer">Pexels</a>
-          </div>
         </div>
       </div>
     </section>

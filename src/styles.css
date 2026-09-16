@@ -1165,7 +1165,7 @@ textarea {
 .electrical-story__footer {
   bottom: clamp(24px, 4vw, 48px);
   display: grid;
-  grid-template-columns: minmax(140px, 1fr) auto auto;
+  grid-template-columns: minmax(140px, 1fr) auto;
   align-items: center;
   gap: 30px;
   color: rgba(241, 240, 232, 0.5);
@@ -1193,10 +1193,6 @@ textarea {
   display: flex;
   align-items: center;
   gap: 9px;
-}
-
-.electrical-story__credits a:hover {
-  color: var(--accent);
 }
 
 @media (max-width: 760px) {
@@ -1228,14 +1224,6 @@ textarea {
 
   .electrical-story__copy h2 {
     font-size: clamp(3rem, 13vw, 5.2rem);
-  }
-
-  .electrical-story__footer {
-    grid-template-columns: 1fr auto;
-  }
-
-  .electrical-story__credits {
-    display: none;
   }
 }
 
